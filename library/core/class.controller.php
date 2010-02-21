@@ -389,12 +389,14 @@ class Gdn_Controller extends Gdn_Pluggable {
     * @param string $FileName The CSS file to search for.
     * @param string $AppFolder The application folder that should contain the CSS file. Default is to
     * use the application folder that this controller belongs to.
+    * @return int The number of file entries found and removed
     */
    public function RemoveCssFile($FileName, $AppFolder = '') {
       $keys = array_keys($this->_CssFiles, array('FileName' => $FileName, 'AppFolder' => $AppFolder));
       foreach($keys as $key) {
          unset($this->_CssFiles[$key]);
       }
+      return count($keys);
    }
    
    /**
@@ -403,12 +405,14 @@ class Gdn_Controller extends Gdn_Pluggable {
     * @param string $FileName The JS file to search for.
     * @param string $AppFolder The application folder that should contain the JS file. Default is to
     * use the application folder that this controller belongs to.
+    * @return int The number of file entries found and removed
     */
    public function RemoveJsFile($FileName, $AppFolder = '') {
       $keys = array_keys($this->_JsFiles, array('FileName' => $FileName, 'AppFolder' => $AppFolder));
       foreach($keys as $key) {
          unset($this->_JsFiles[$key]);
       }
+      return count($keys);
    }
 
    /**
