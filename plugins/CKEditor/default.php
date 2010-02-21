@@ -29,9 +29,16 @@ class CKEditorPlugin implements Gdn_IPlugin {
       $Sender->AddJsFile('/plugins/CKEditor/ckeditor/ckeditor.js');
       $Sender->AddJsFile('/plugins/CKEditor/ckeditor/adapters/jquery.js');
       $Sender->AddJsFile('/plugins/CKEditor/start.js');
+      
       $Sender->RemoveJsFile('js/library/jquery.autogrow.js');
       $Sender->RemoveJsFile('/js/library/jquery.autogrow.js');
-      $Sender->RemoveJsFile('autosave.js');
+      $Sender->RemoveJsFile('post.js');
+      //$Sender->RemoveJsFile('autosave.js');
+   }
+   
+   public function DiscussionController_BeforeDiscussionRender_Handler(&$Sender) {
+      $Sender->RemoveJsFile('discussion.js');
+      $Sender->AddJsFile('/plugins/CKEditor/discussion.js');
    }
    
    /* Adding CKEditor settings link to side menu */

@@ -235,8 +235,10 @@ class Format {
             $Mixed
          );
          
-         // nl2br
-         $Mixed = preg_replace("/(\015\012)|(\015)|(\012)/", "<br />", $Mixed);
+         if(Gdn::Config('Garden.Html.nl2br', TRUE)) {
+            // nl2br
+            $Mixed = preg_replace("/(\015\012)|(\015)|(\012)/", "<br />", $Mixed);
+         }
 
          return $Formatter->Format($Mixed);
       }

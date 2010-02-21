@@ -28,7 +28,7 @@ Contact Vanilla Forums Inc. at support [at] vanillaforums [dot] com
  * them.
  *
  * @package Garden
- * @todo Could it include a Disable and Uninstall method? (from damien)
+ * @todo Document the existence of OnDisable & CleanUp function calls (optional so they don't appear here)
  */
 interface Gdn_IPlugin {
 

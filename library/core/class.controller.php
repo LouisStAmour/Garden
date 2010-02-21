@@ -375,12 +375,40 @@ class Gdn_Controller extends Gdn_Pluggable {
    /**
     * Adds a JS file to search for in the application or global js folder(s).
     *
-    * @param string $FileName The CSS file to search for.
+    * @param string $FileName The JS file to search for.
     * @param string $AppFolder The application folder that should contain the JS file. Default is to
     * use the application folder that this controller belongs to.
     */
    public function AddJsFile($FileName, $AppFolder = '') {
       $this->_JsFiles[] = array('FileName' => $FileName, 'AppFolder' => $AppFolder);
+   }
+   
+   /**
+    * Removes a CSS file to search for in the theme folder(s).
+    *
+    * @param string $FileName The CSS file to search for.
+    * @param string $AppFolder The application folder that should contain the CSS file. Default is to
+    * use the application folder that this controller belongs to.
+    */
+   public function RemoveCssFile($FileName, $AppFolder = '') {
+      $keys = array_keys($this->_CssFiles, array('FileName' => $FileName, 'AppFolder' => $AppFolder));
+      foreach($keys as $key) {
+         unset($this->_CssFiles[$key]);
+      }
+   }
+   
+   /**
+    * Removes a JS file to search for in the application or global js folder(s).
+    *
+    * @param string $FileName The JS file to search for.
+    * @param string $AppFolder The application folder that should contain the JS file. Default is to
+    * use the application folder that this controller belongs to.
+    */
+   public function RemoveJsFile($FileName, $AppFolder = '') {
+      $keys = array_keys($this->_JsFiles, array('FileName' => $FileName, 'AppFolder' => $AppFolder));
+      foreach($keys as $key) {
+         unset($this->_JsFiles[$key]);
+      }
    }
 
    /**
