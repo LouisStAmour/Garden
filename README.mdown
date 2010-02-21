@@ -1,0 +1,5 @@
+# Adding ckEditor to Garden #
+
+I've started this fork to preserve my minimal changes to Garden necessary to integrate ckEditor. I'm also planning on adding any bits of code that could improve in-browser performance -- we'll see how far I get. As I'm also in the process of writing an application for a rather niche use, I may come across additional areas of improvement. And certainly, documentation via comments could use some sprucing up. But enough talk, let's get coding!
+
+-- Louis
